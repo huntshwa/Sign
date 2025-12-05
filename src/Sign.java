@@ -8,16 +8,24 @@ public class Sign {
     }
 
     public int numberOfLines() {
-        String iMessage = message;
         int lines = 0;
 
-        while (iMessage.length() != 0) {
-            iMessage = iMessage.substring(0, width);
-        }
+        for (int i = 0; i < message.length();i += width)
+            lines++;
+
+        return lines;
     }
 
     public String getLines() {
+        int lines = numberOfLines();
+        String fMessage = "";
 
+        for (int i = 0; i < lines - 1; i++)
+            fMessage += message.substring(i * width, (i + 1) * width) + ";";
+
+        fMessage += message.substring((lines - 1) * width);
+
+        return fMessage;
     }
 
 }
