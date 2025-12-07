@@ -3,21 +3,17 @@ public class Main {
         String str;
         int x;
 
-        Sign[] signList = new Sign(5);
-        Sign signList[] = new Sign("ABC222DE", 3);
-        Sign signList[] = new Sign("ABCD", 10);
-        Sign signList[] = new Sign("ABCDEF", 6);
-        Sign signList[] = new Sign("", 4);
-        Sign signList[] = new Sign("AB_CD_EF", 2);
+        Sign[] signList = new Sign[5];
+        signList[0] = new Sign("ABC222DE", 3);
+        signList[1] = new Sign("ABCD", 10);
+        signList[2] = new Sign("ABCDEF", 6);
+        signList[3] = new Sign("", 4);
+        signList[4] = new Sign("AB_CD_EF", 2);
         for (int i = 0; i < 5; i++) {
-            x = sign1.numberOfLines();
-            str = sign1.getLines();
+            x = signList[i].numberOfLines();
+            str = signList[i].getLines();
 
-            System.out.println(x + "; " + str);
+            System.out.println(x + ": " + str);
         }
-
-
-
-
     }
 }

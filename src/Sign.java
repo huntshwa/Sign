@@ -10,7 +10,9 @@ public class Sign {
     public int numberOfLines() {
         int lines = 0;
 
-        for (int i = 0; i < message.length();i += width)
+        if (message == null || width <= 0) return -1;
+
+        for (int i = 0; i < message.length(); i += width)
             lines++;
 
         return lines;
@@ -19,6 +21,8 @@ public class Sign {
     public String getLines() {
         int lines = numberOfLines();
         String fMessage = "";
+
+        if (lines <= 0) return null;
 
         for (int i = 0; i < lines - 1; i++)
             fMessage += message.substring(i * width, (i + 1) * width) + ";";
